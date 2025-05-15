@@ -9,7 +9,7 @@
 <script src="MISSING_ESBUILD_ASSET" defer></script>
 <script type="module">let lastmod = 0
 function startReloadConnection() {
-  const evtSource = new EventSource("/_bridgetown/live_reload")
+  const evtSource = new EventSource("/projectERB/_bridgetown/live_reload")
   evtSource.onmessage = event => {
     if (document.querySelector("#bridgetown-build-error")) document.querySelector("#bridgetown-build-error").close()
     if (event.data == "reloaded!") {
