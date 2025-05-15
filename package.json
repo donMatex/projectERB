@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "esbuild": "node esbuild.config.js --minify",
-    "esbuild-dev": "node esbuild.config.js --watch",
-    "build:css": "tailwindcss -i ./src/input.css -o ./output/assets/styles.css --minify"
+  "esbuild": "node esbuild.config.js --minify",
+  "esbuild-dev": "node esbuild.config.js --watch",
+  "build:css": "tailwindcss -i ./frontend/styles/index.css -o ./output/assets/styles.css --minify"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.16",
