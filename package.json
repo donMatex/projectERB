@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "esbuild": "node esbuild.config.js --minify",
-    "esbuild-dev": "node esbuild.config.js --watch"
+    "esbuild-dev": "node esbuild.config.js --watch",
+    "build:css": "tailwindcss -i ./src/input.css -o ./output/assets/styles.css --minify"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.16",
@@ -21,3 +22,4 @@
     "tailwindcss": "^3.4.17"
   }
 }
+
