@@ -39,6 +39,9 @@ jobs:
       - name: Build Bridgetown site
         run: bundle exec bridgetown build
 
+      - name: Show output folder contents
+        run: ls -la output
+
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
