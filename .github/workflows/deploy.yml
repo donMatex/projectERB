@@ -28,7 +28,7 @@ jobs:
           bundle install
 
       - name: Build the site
-        run: bundle exec bridgetown deploy
+        run: bundle exec bridgetown build
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
