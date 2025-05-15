@@ -23,9 +23,7 @@ jobs:
           bundler-cache: true
 
       - name: Install dependencies
-        run: |
-          gem install bundler
-          bundle install
+        run: bundle install
 
       - name: Build the site
         run: bundle exec bridgetown build
