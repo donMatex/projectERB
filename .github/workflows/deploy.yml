@@ -25,7 +25,7 @@ jobs:
         run: npm install
 
       - name: Build CSS with Tailwind
-        run: npm run build:css # lub możesz zostawić npx tailwindcss -i ...
+        run: npm run build:css
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
@@ -44,3 +44,4 @@ jobs:
         with:
           branch: gh-pages
           folder: output
+          github_token: ${{ secrets.GITHUB_TOKEN }}
