@@ -5,9 +5,9 @@
   "scripts": {
     "esbuild": "node esbuild.config.js --minify",
     "esbuild-dev": "node esbuild.config.js --watch",
-    "build:css": "tailwindcss -i ./frontend/styles/index.css -o ./output/assets/styles.css --minify",
+    "build:css": "mkdir -p ./output/assets && tailwindcss -i ./frontend/styles/index.css -o ./output/assets/styles.css --minify",
     "postbuild:css": "mkdir -p src/_assets/css && cp ./output/assets/styles.css src/_assets/css/main.css" 
-  },
+},
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.16",
     "autoprefixer": "^10.4.21",

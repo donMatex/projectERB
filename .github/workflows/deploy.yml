@@ -36,6 +36,9 @@ jobs:
       - name: Install Node dependencies
         run: npm install
 
+      - name: Ensure output/assets exists
+        run: mkdir -p output/assets
+
       - name: Build CSS with Tailwind
         run: npm run build:css
 
