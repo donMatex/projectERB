@@ -37,7 +37,7 @@ jobs:
         run: npm install
 
       - name: Build CSS with Tailwind
-        run: npm run build
+        run: npm run build:css
 
       - name: Copy built CSS to Bridgetown assets
         run: cp frontend/styles/index.css src/_assets/css/main.css
