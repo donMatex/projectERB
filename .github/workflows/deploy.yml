@@ -34,10 +34,10 @@ jobs:
           node-version: "20"
 
       - name: Install Node dependencies
-        run: yarn install
+        run: npm install
 
       - name: Build CSS with Tailwind
-        run: yarn build
+        run: npm run build
 
       - name: Copy built CSS to Bridgetown assets
         run: cp frontend/styles/index.css src/_assets/css/main.css
