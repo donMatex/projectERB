@@ -21,7 +21,7 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.2" # dostosuj do własnych potrzeb
+          ruby-version: "3.2"
 
       - name: Install dependencies
         run: |
@@ -40,15 +40,12 @@ jobs:
         run: npm run build:css
 
       - name: Copy built CSS to Bridgetown assets
-        run: cp frontend/styles/index.css src/_assets/css/main.css
+        run: |
+          mkdir -p src/_assets/css
+          cp output/assets/styles.css src/_assets/css/main.css
 
       - name: Build Bridgetown site
         run: bundle exec bridgetown build
-
-      - name: Copy CSS to output/assets
-        run: |
-          mkdir -p output/assets
-          cp frontend/styles/index.css output/assets/main.css
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
