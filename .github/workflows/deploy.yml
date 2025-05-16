@@ -36,19 +36,14 @@ jobs:
       - name: Install Node dependencies
         run: npm install
 
+      - name: Build Bridgetown site
+        run: bundle exec bridgetown build
+
       - name: Ensure output/assets exists
         run: mkdir -p output/assets
 
       - name: Build CSS with Tailwind
         run: npm run build:css
-
-      - name: Copy built CSS to Bridgetown assets
-        run: |
-          mkdir -p src/_assets/css
-          cp output/assets/styles.css src/_assets/css/main.css
-
-      - name: Build Bridgetown site
-        run: bundle exec bridgetown build
 
       - name: Debug output directory
         run: ls -lR output
