@@ -24,7 +24,7 @@ jobs:
           bundle install
 
       - name: Build Bridgetown site
-        run: bundle exec bridgetown deploy --destination output
+        run: bundle exec bridgetown build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
