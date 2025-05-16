@@ -28,8 +28,27 @@ jobs:
           gem install bundler
           bundle install
 
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install Node dependencies
+        run: yarn install
+
+      - name: Build CSS with Tailwind
+        run: yarn build
+
+      - name: Copy built CSS to Bridgetown assets
+        run: cp frontend/styles/index.css src/_assets/css/main.css
+
       - name: Build Bridgetown site
         run: bundle exec bridgetown build
+
+      - name: Copy CSS to output/assets
+        run: |
+          mkdir -p output/assets
+          cp frontend/styles/index.css output/assets/main.css
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
