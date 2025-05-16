@@ -16,35 +16,20 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: "18"
-
-      - name: Install npm dependencies
-        run: npm install
-
-      - name: Build CSS with Tailwind
-        run: npm run build:css
-
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.2"
           bundler-cache: true
 
-      - name: Install Ruby dependencies
+      - name: Install dependencies
         run: bundle install
 
-      - name: Build Bridgetown site
+      - name: Build the site
         run: bundle exec bridgetown build
-
-      - name: Show output folder contents
-        run: ls -la output
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
           folder: output
-          clean: true
